@@ -1,17 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-  <meta charset="UTF-8">
-  <title>Flying Birds Sunset</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/reset.min.css">
-<link rel="stylesheet" href="css/style.css">
-<script src="js/prefixfree.min.js"></script>
-
+	<meta charset="UTF-8">
+	<title>Flying Birds Sunset</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/reset.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/prefixfree.min.js"></script>
 </head>
 <body>
-<!-- partial:index.partial.html -->
+
+  <!-- about -->
+<div class="about">
+
+  <a class="bg_links social github" href="https://github.com/bmshifat" target="_blank">
+     <span class="icon"></span>
+  </a>
+  <a class="bg_links social portfolio" href="https://rebrand.ly/bmshifat" target="_blank">
+    <span class="icon"></span>
+ </a>
+  <a class="bg_links social insta" href="https://instagram.com/bmshifat" target="_blank">
+     <span class="icon"></span>
+  </a>
+  <a class="bg_links logo"></a>
+</div>
+<!-- end about -->
+
 <div id="birds">
   <div class="screen" v-on:mousemove="flyBirds" v-on:touchstart="touchstartEvent" v-on:touchend="touchendEvent" v-on:touchmove="touchmoveEvent" v-on:touchcancel="touchcancelEvent">
     <div class="bird" v-for="bird, index in birds" v-if="bird !== null" v-bind:class="bird.active === true ? 'active' : ''" v-bind:style="bird.style">
@@ -20,8 +34,9 @@
     </div>
   </div>
 </div>
-<!-- partial -->
-  <script src='js/vue.min.js'></script><script  src="js/script.js"></script>
+
+  <script src='js/vue.min.js'></script>
+  <script  src="js/script.js"></script>
 
 </body>
 </html>
