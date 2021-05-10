@@ -1,0 +1,67 @@
+.screen {
+  background-image: url("https://source.unsplash.com/1600x900/?skye");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.bird {
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+  top: var(--top);
+  left: var(--left);
+}
+.bird.active {
+  transform: rotate(var(--angle)) scale(0) translate(var(--dist-x), var(--dist-y));
+  filter: blur(2vmin);
+  transition: transform 2000ms ease-out, filter 2000ms ease-out;
+}
+
+.wing {
+  --stroke: calc(var(--size) * 0.2);
+  --half-stroke: calc(var(--stroke) / 2);
+  width: 100%;
+  height: 100%;
+  border: solid var(--stroke) #000000;
+  border-bottom: none;
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;
+  border-radius: 50% 50% 0% 0%/100% 100% 0% 0%;
+}
+.wing.left {
+  left: calc(50% - var(--half-stroke));
+  transform-origin: left bottom;
+  animation: left-wing 512ms ease-out infinite;
+}
+.wing.right {
+  right: calc(50% - var(--half-stroke));
+  transform-origin: right bottom;
+  animation: right-wing 512ms ease-out infinite;
+}
+
+@keyframes left-wing {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-45deg) skew(10deg, 30deg);
+  }
+  75% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes right-wing {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(45deg) skew(-10deg, -30deg);
+  }
+  75% {
+    transform: rotate(-45deg);
+  }
+}

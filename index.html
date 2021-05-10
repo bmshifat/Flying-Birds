@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Flying Birds Sunset</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/reset.min.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/prefixfree.min.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="birds">
+  <div class="screen" v-on:mousemove="flyBirds" v-on:touchstart="touchstartEvent" v-on:touchend="touchendEvent" v-on:touchmove="touchmoveEvent" v-on:touchcancel="touchcancelEvent">
+    <div class="bird" v-for="bird, index in birds" v-if="bird !== null" v-bind:class="bird.active === true ? 'active' : ''" v-bind:style="bird.style">
+      <div class="wing left"></div>
+      <div class="wing right"></div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='js/vue.min.js'></script><script  src="js/script.js"></script>
+
+</body>
+</html>
